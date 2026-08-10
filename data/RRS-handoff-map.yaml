@@ -1,0 +1,51 @@
+handoffs:
+  - from: RRS-chief
+    to: RRS-creator-strategist
+    from_task: RRS-run-initial-diagnosis
+    to_task: RRS-build-creator-map
+    required_artifacts: [mode]
+    pass: "modo from_zero ou creator_map ausente"
+  - from: RRS-creator-strategist
+    to: RRS-topic-researcher
+    from_task: RRS-discover-and-score-topics
+    to_task: RRS-research-topic
+    required_artifacts: [creator_map, approved_topic, topic_score]
+    pass: "topic_score >= 6"
+  - from: RRS-topic-researcher
+    to: RRS-angle-architect
+    from_task: RRS-research-topic
+    to_task: RRS-explore-angles
+    required_artifacts: [research_packet, evidence_ledger]
+    pass: "alegações centrais suportadas ou rotuladas"
+  - from: RRS-angle-architect
+    to: RRS-hook-architect
+    from_task: RRS-explore-angles
+    to_task: RRS-select-hook
+    required_artifacts: [approved_angle]
+    pass: "ângulo aprovado pelo usuário"
+  - from: RRS-hook-architect
+    to: RRS-scriptwriter
+    from_task: RRS-select-hook
+    to_task: RRS-design-structure
+    required_artifacts: [approved_hook]
+    pass: "hook aprovado explicitamente"
+  - from: RRS-scriptwriter
+    to: RRS-evidence-editor
+    from_task: RRS-write-script
+    to_task: RRS-validate-script
+    required_artifacts: [script_draft, synchronized_captions]
+    pass: "roteiro completo"
+  - from: RRS-evidence-editor
+    to: RRS-recording-director
+    from_task: RRS-validate-script
+    to_task: RRS-create-recording-direction
+    required_artifacts: [approved_script, validation_report]
+    pass: "todos os checklists PASS"
+  - from: RRS-recording-director
+    to: RRS-iteration-analyst
+    from_task: RRS-create-recording-direction
+    to_task: RRS-analyze-publication
+    required_artifacts: [recording_plan]
+    pass: "vídeo publicado e métricas disponíveis"
+
+failure_format: "RISCO → ARTEFATO AUSENTE → PRÓXIMO PASSO"

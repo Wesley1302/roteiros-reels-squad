@@ -1,0 +1,17 @@
+id: RRS-from-zero
+name: "Criador ao primeiro ciclo de Reels"
+type: end-to-end
+entry_agent: RRS-chief
+default_mode: interactive
+phases:
+  - {id: foundation, steps: [RRS-run-initial-diagnosis, RRS-build-creator-map]}
+  - {id: topic, steps: [RRS-discover-and-score-topics, RRS-research-topic, RRS-explore-angles]}
+  - {id: script, steps: [RRS-select-hook, RRS-design-structure, RRS-write-script, RRS-validate-script]}
+  - {id: production, steps: [RRS-create-recording-direction]}
+  - {id: learning, steps: [RRS-analyze-publication]}
+gates:
+  - "creator_map aprovado antes de temas"
+  - "tema >= 6/8 antes de ângulo"
+  - "hook aprovado antes de roteiro"
+  - "roteiro PASS antes de direção"
+interaction_rule: "uma decisão por vez; no máximo três opções"

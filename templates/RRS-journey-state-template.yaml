@@ -1,0 +1,26 @@
+journey:
+  mode:
+  current_workflow:
+  current_agent: RRS-chief
+  current_task: RRS-run-initial-diagnosis
+  completed_steps: []
+  failed_steps: []
+  next_decision:
+artifacts:
+  creator_map:
+  topic_candidates: []
+  approved_topic:
+  topic_score:
+  research_packet:
+  evidence_ledger: []
+  approved_angle:
+  approved_hook:
+  script_structure:
+  script_draft:
+  approved_script:
+  recording_plan:
+  learning_records: []
+preferences:
+  max_options: 3
+  one_decision_at_a_time: true
+  visual_text: synchronized_captions_only

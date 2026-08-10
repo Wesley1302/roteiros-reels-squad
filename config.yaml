@@ -1,0 +1,105 @@
+squad:
+  name: Roteiros-Reels-Squad
+  display_name: "Roteiros Reels Squad"
+  version: "1.0.0"
+  language: pt-BR
+  domain: "Instagram Reels content strategy, research, scripting, production and iteration"
+  entry_agent: RRS-chief
+  philosophy: "Tema forte antes de hook; evidência antes de afirmação; produção simples; publicação gera aprendizado."
+
+tiers:
+  tier_0:
+    name: "Orchestration"
+    agents: [RRS-chief]
+  tier_1:
+    name: "Strategy and Evidence"
+    agents: [RRS-creator-strategist, RRS-topic-researcher, RRS-angle-architect, RRS-hook-architect]
+  tier_2:
+    name: "Writing, Quality and Production"
+    agents: [RRS-scriptwriter, RRS-evidence-editor, RRS-recording-director, RRS-iteration-analyst]
+
+agents:
+  RRS-chief: {file: agents/RRS-chief.md, tier: tier_0, handoffs_to: [RRS-creator-strategist, RRS-topic-researcher, RRS-angle-architect, RRS-hook-architect, RRS-scriptwriter, RRS-iteration-analyst]}
+  RRS-creator-strategist: {file: agents/RRS-creator-strategist.md, tier: tier_1, handoffs_to: [RRS-topic-researcher, RRS-angle-architect]}
+  RRS-topic-researcher: {file: agents/RRS-topic-researcher.md, tier: tier_1, handoffs_to: [RRS-angle-architect, RRS-evidence-editor]}
+  RRS-angle-architect: {file: agents/RRS-angle-architect.md, tier: tier_1, handoffs_to: [RRS-hook-architect]}
+  RRS-hook-architect: {file: agents/RRS-hook-architect.md, tier: tier_1, handoffs_to: [RRS-scriptwriter]}
+  RRS-scriptwriter: {file: agents/RRS-scriptwriter.md, tier: tier_2, handoffs_to: [RRS-evidence-editor]}
+  RRS-evidence-editor: {file: agents/RRS-evidence-editor.md, tier: tier_2, handoffs_to: [RRS-scriptwriter, RRS-recording-director]}
+  RRS-recording-director: {file: agents/RRS-recording-director.md, tier: tier_2, handoffs_to: [RRS-iteration-analyst]}
+  RRS-iteration-analyst: {file: agents/RRS-iteration-analyst.md, tier: tier_2, handoffs_to: [RRS-chief, RRS-topic-researcher, RRS-hook-architect]}
+
+tasks:
+  RRS-run-initial-diagnosis: tasks/RRS-run-initial-diagnosis.md
+  RRS-build-creator-map: tasks/RRS-build-creator-map.md
+  RRS-discover-and-score-topics: tasks/RRS-discover-and-score-topics.md
+  RRS-research-topic: tasks/RRS-research-topic.md
+  RRS-explore-angles: tasks/RRS-explore-angles.md
+  RRS-select-hook: tasks/RRS-select-hook.md
+  RRS-design-structure: tasks/RRS-design-structure.md
+  RRS-write-script: tasks/RRS-write-script.md
+  RRS-validate-script: tasks/RRS-validate-script.md
+  RRS-create-recording-direction: tasks/RRS-create-recording-direction.md
+  RRS-analyze-publication: tasks/RRS-analyze-publication.md
+
+workflows:
+  RRS-from-zero: workflows/RRS-from-zero.yaml
+  RRS-topic-to-script: workflows/RRS-topic-to-script.yaml
+  RRS-current-ai-update: workflows/RRS-current-ai-update.yaml
+  RRS-improve-draft: workflows/RRS-improve-draft.yaml
+  RRS-post-publication-learning: workflows/RRS-post-publication-learning.yaml
+
+checklists:
+  - checklists/RRS-topic-score-checklist.md
+  - checklists/RRS-hook-checklist.md
+  - checklists/RRS-script-checklist.md
+  - checklists/RRS-evidence-checklist.md
+  - checklists/RRS-production-checklist.md
+  - checklists/RRS-tdah-output-checklist.md
+
+data:
+  handoffs: data/RRS-handoff-map.yaml
+  hooks: data/RRS-hook-library.yaml
+  objectives: data/RRS-objective-matrix.yaml
+  sources: data/RRS-source-registry.yaml
+
+state:
+  journey: state/RRS-journey-state.yaml
+  template: templates/RRS-journey-state-template.yaml
+
+settings:
+  default_mode: interactive
+  max_options_per_round: 3
+  decisions_per_turn: 1
+  topic_min_score: 6
+  topic_max_score: 8
+  default_duration_seconds: [25, 40]
+  posting_cadence_per_week: 2
+  visual_text_policy: "synchronized_captions_only"
+  fact_policy: "fact_inference_hypothesis_separated"
+
+commands:
+  entry: reels-chief
+  map:
+    reels-chief: {agent: RRS-chief, task: RRS-run-initial-diagnosis}
+    reels-temas: {agent: RRS-creator-strategist, task: RRS-discover-and-score-topics}
+    reels-pesquisa: {agent: RRS-topic-researcher, task: RRS-research-topic}
+    reels-angulos: {agent: RRS-angle-architect, task: RRS-explore-angles}
+    reels-hooks: {agent: RRS-hook-architect, task: RRS-select-hook}
+    reels-roteiro: {agent: RRS-scriptwriter, tasks: [RRS-design-structure, RRS-write-script]}
+    reels-revisao: {agent: RRS-evidence-editor, task: RRS-validate-script}
+    reels-direcao: {agent: RRS-recording-director, task: RRS-create-recording-direction}
+    reels-metricas: {agent: RRS-iteration-analyst, task: RRS-analyze-publication}
+
+sequence_canonical:
+  - RRS-run-initial-diagnosis
+  - RRS-build-creator-map
+  - RRS-discover-and-score-topics
+  - RRS-research-topic
+  - RRS-explore-angles
+  - RRS-select-hook
+  - RRS-design-structure
+  - RRS-write-script
+  - RRS-validate-script
+  - RRS-create-recording-direction
+  - RRS-analyze-publication

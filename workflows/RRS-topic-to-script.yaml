@@ -1,0 +1,17 @@
+id: RRS-topic-to-script
+name: "Tema existente até roteiro gravável"
+type: focused
+entry_agent: RRS-chief
+sequence:
+  - {task: RRS-discover-and-score-topics, condition: "avaliar tema informado"}
+  - {task: RRS-research-topic, condition: "tema factual, técnico, atual ou controverso"}
+  - {task: RRS-explore-angles}
+  - {task: RRS-select-hook}
+  - {task: RRS-design-structure}
+  - {task: RRS-write-script}
+  - {task: RRS-validate-script}
+  - {task: RRS-create-recording-direction}
+fail_routes:
+  topic_below_6: RRS-discover-and-score-topics
+  unsupported_claim: RRS-research-topic
+  weak_hook: RRS-select-hook

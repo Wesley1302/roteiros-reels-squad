@@ -1,0 +1,13 @@
+id: RRS-improve-draft
+name: "Diagnóstico e melhoria de rascunho"
+type: audit
+entry_agent: RRS-evidence-editor
+sequence:
+  - {task: RRS-validate-script, rule: "diagnosticar antes de reescrever"}
+  - {task: RRS-research-topic, condition: "há alegação sem suporte"}
+  - {task: RRS-select-hook, condition: "hook fraco ou desalinhado"}
+  - {task: RRS-design-structure, condition: "progressão quebrada"}
+  - {task: RRS-write-script}
+  - {task: RRS-validate-script}
+  - {task: RRS-create-recording-direction}
+change_policy: "preservar voz e trechos aprovados; alteração cirúrgica"

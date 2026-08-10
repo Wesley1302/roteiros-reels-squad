@@ -1,0 +1,33 @@
+objectives:
+  followers:
+    preferred_amplitude: [broad, hybrid]
+    preferred_mechanisms: [contrast_error_better, hidden_difference, direct_diagnosis, quantitative_test]
+    cta: "seguir com promessa futura específica"
+    primary_signals: [new_followers, profile_visits, three_second_retention]
+  saves:
+    preferred_amplitude: [specific, hybrid]
+    required_value_asset: [checklist, process, comparison_criteria, template, conditional_rule]
+    preferred_mechanisms: [warning_checklist, numbered_process, prerequisite, method_comparison]
+    cta: "salvar com situação futura concreta"
+    primary_signals: [saves, completion]
+  shares:
+    preferred_amplitude: [broad, hybrid]
+    preferred_mechanisms: [contrast_error_better, limitation_alert, hidden_difference]
+    cta: "compartilhar com pessoa ou situação específica"
+    primary_signals: [shares, reach]
+  authority:
+    preferred_amplitude: [hybrid, specific]
+    preferred_mechanisms: [jeff_nippard_style, quantitative_test, method_comparison]
+    cta: "seguir para uma linha editorial específica"
+    primary_signals: [saves, profile_visits, qualified_comments]
+  leads_or_sales:
+    preferred_amplitude: [specific]
+    preferred_mechanisms: [direct_diagnosis, prerequisite, numbered_process]
+    cta: "um próximo passo real e disponível"
+    primary_signals: [qualified_comments, link_actions, leads]
+
+cta_rules:
+  - "exatamente um CTA"
+  - "automação por comentário somente se ferramenta ativa estiver confirmada"
+  - "urgência apenas quando verdadeira"
+  - "CTA de salvar exige ativo reutilizável"

@@ -1,0 +1,39 @@
+sources:
+  - id: project_strategy
+    path: data/knowledge/00_indice.md
+    type: curated
+    use: "mapa das bases produzidas"
+  - id: script_elements
+    path: data/knowledge/01_elementos_de_um_bom_roteiro.md
+    type: curated
+    use: "qualidade e componentes"
+  - id: structure_library
+    path: data/knowledge/02_biblioteca_de_estruturas.md
+    type: curated
+    use: "famílias de estrutura"
+  - id: ava_jeff_references
+    path: data/knowledge/03_referencias_ava_e_jeff.md
+    type: curated
+    use: "princípios extraídos de referências"
+  - id: research_iteration
+    path: data/knowledge/04_pesquisa_e_iteracao.md
+    type: curated
+    use: "pesquisa e feedback"
+  - id: skill_architecture
+    path: data/knowledge/05_arquitetura_skill_roteiros_reels.md
+    type: curated
+    use: "fluxo TDAH-first"
+  - id: notion_50
+    path: data/RRS-notion-50-models.md
+    type: raw_reference
+    use: "50 modelos completos com instruções"
+  - id: flopados_virais
+    path: data/RRS-reel-flopados-vs-virais.md
+    type: analyzed_reference
+    use: "contraste, clareza, edição simples e intenção"
+  - id: jeff_hooks
+    path: data/RRS-hook-library.yaml
+    type: codified_reference
+    use: "hooks factuais contraintuitivos"
+
+provenance_rule: "manter fonte bruta, síntese curada e regra operacional separadas"

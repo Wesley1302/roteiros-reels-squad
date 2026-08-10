@@ -1,0 +1,75 @@
+version: "1.0.0"
+selection_rule: "objetivo -> temperatura -> mecanismo -> evidência -> formulação"
+
+amplitude:
+  broad:
+    use_when: [descoberta, seguidores, topo_de_funil]
+    rule: "dor ou desejo reconhecível por público amplo; qualificar logo depois"
+  specific:
+    use_when: [salvamentos, qualificação, conversão, seguidores_nichados]
+    rule: "situação, perfil ou ferramenta claramente delimitados"
+  hybrid:
+    use_when: [alcance_com_relevancia]
+    rule: "abertura ampla; qualificador específico na frase seguinte"
+
+core_mechanisms:
+  - id: contrast_error_better
+    name: "Erro comum versus alternativa melhor"
+    source: "Reel flopados vs virais"
+    formula: "Se você quer [resultado ruim], faça [erro]. Se quer [resultado desejado], faça [alternativa]."
+    caution: "comparação organiza a mensagem; não garante viralização"
+  - id: minimum_maximum
+    name: "Mínimo/Máximo"
+    formula: "Você só precisa de [mínimo verificável] para [resultado delimitado]."
+  - id: quantitative_test
+    name: "Teste quantitativo"
+    formula: "Eu [testei/analisei] [N casos reais]. Só [X] produziram [resultado]."
+    requires: [dado_real, experiencia_real]
+  - id: warning_checklist
+    name: "Checklist de alerta"
+    formula: "[N] sinais de que [situação indesejada]."
+  - id: limitation_alert
+    name: "Alerta de limitação"
+    formula: "Se você está [comportamento comum], pode estar [consequência verificável]."
+  - id: method_comparison
+    name: "Comparação de métodos"
+    formula: "[Método A] versus [Método B]. O critério que decide é [X]."
+  - id: prerequisite
+    name: "Pré-requisito antes da ação"
+    formula: "Não faça [ação comum] antes de [pré-requisito]."
+  - id: hidden_difference
+    name: "Diferença escondida"
+    formula: "Parecem iguais, mas [diferença] muda [resultado]."
+  - id: direct_diagnosis
+    name: "Diagnóstico direto"
+    formula: "Seu [processo] falha não por [crença], mas por [causa]."
+  - id: numbered_process
+    name: "Processo em passos"
+    formula: "Se você [perfil] quer [objetivo], faça estes [N] passos."
+
+jeff_nippard_style:
+  definition: "revelação factual com número concreto, contraintuição e aplicação prática"
+  required: [fonte_verificavel, numero_real, limite_explicito]
+  patterns:
+    - "Um estudo acompanhou [N pessoas] por [Y período]. O que diferenciou [resultado] não foi [crença]."
+    - "Eu calculei exatamente [quantidade] necessária para [resultado]. O número muda [decisão prática]."
+    - "Você provavelmente está fazendo [ação comum] da forma errada por um detalhe pouco explicado."
+    - "[N%] de [grupo] enfrentou [resultado] em [período]. O motivo não foi [crença]."
+  ai_adaptations:
+    - "Testei [N] formas de pedir [tarefa] a uma LLM. A diferença não estava no tamanho do prompt."
+    - "Comparei [N] saídas com e sem [estrutura]. O detalhe que mais mudou o resultado foi [dado real]."
+  forbidden:
+    - "inventar estudo, amostra, percentual ou teste"
+    - "usar linguagem científica para opinião pessoal"
+    - "omitir limitações relevantes"
+
+notion_catalog:
+  raw_file: data/RRS-notion-50-models.md
+  use_rule: "escolher pela função narrativa; adaptar mecanismo, nunca copiar história ou promessa"
+  families:
+    comparison: [2, 3, 4, 5, 7, 8, 9, 10, 41, 44]
+    diagnosis_and_belief: [11, 12, 13, 14, 15, 16, 19, 20, 42, 48]
+    educational_list: [1, 6, 17, 18, 43, 45, 46, 47, 49, 50]
+    narrative_and_vlog: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
+
+approval_gate: "nenhum roteiro antes de approved_hook=true"

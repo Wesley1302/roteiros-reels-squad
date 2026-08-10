@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "agents": 9,
+  "tasks": 11,
+  "workflows": 5,
+  "checklists": 6,
+  "commands": 9,
+  "notion_models": 50,
+  "errors": []
+}

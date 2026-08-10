@@ -1,0 +1,13 @@
+journey:
+  mode:
+  current_workflow:
+  current_agent: RRS-chief
+  current_task: RRS-run-initial-diagnosis
+  completed_steps: []
+  failed_steps: []
+  next_decision:
+artifacts: {}
+preferences:
+  max_options: 3
+  one_decision_at_a_time: true
+  visual_text: synchronized_captions_only

@@ -1,0 +1,10 @@
+topics:
+  - id:
+    topic:
+    audience_problem:
+    useful_outcome:
+    demonstration:
+    objective:
+    score: {relevance: 0, utility: 0, proof: 0, objective_fit: 0, total: 0}
+    status: candidate
+    evidence_needed: []

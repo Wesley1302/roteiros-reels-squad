@@ -1,0 +1,12 @@
+id: RRS-post-publication-learning
+name: "Publicação até próximo experimento"
+type: feedback-loop
+entry_agent: RRS-iteration-analyst
+sequence:
+  - {task: RRS-analyze-publication}
+  - {route: RRS-discover-and-score-topics, when: "tema não gerou interesse"}
+  - {route: RRS-select-hook, when: "queda nos primeiros segundos"}
+  - {route: RRS-design-structure, when: "retenção intermediária fraca"}
+  - {route: RRS-write-script, when: "clareza ou payoff fracos"}
+  - {route: RRS-create-recording-direction, when: "execução dificultou compreensão"}
+experiment_rule: "alterar uma variável principal por publicação"

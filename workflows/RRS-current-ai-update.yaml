@@ -1,0 +1,14 @@
+id: RRS-current-ai-update
+name: "Novidade de IA até Reel responsável"
+type: research-led
+entry_agent: RRS-topic-researcher
+sequence:
+  - {task: RRS-research-topic, rule: "fonte primária e data obrigatórias"}
+  - {task: RRS-discover-and-score-topics, rule: "avaliar utilidade real para público leigo"}
+  - {task: RRS-explore-angles}
+  - {task: RRS-select-hook, rule: "Jeff Nippard apenas com dado verificável"}
+  - {task: RRS-design-structure, preferred: "o que mudou -> para quem importa -> demonstração -> limite"}
+  - {task: RRS-write-script}
+  - {task: RRS-validate-script}
+  - {task: RRS-create-recording-direction}
+blocking: "release sem utilidade prática não vira roteiro"

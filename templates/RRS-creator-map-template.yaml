@@ -1,0 +1,11 @@
+creator_map:
+  demonstrable_knowledge: []
+  audience:
+  current_objective:
+  resources: [cellphone, microphone, on_camera]
+  cadence: "2 videos/week; batch record 2"
+  constraints:
+    visual_text: "synchronized captions only"
+  authority_limits: []
+  editorial_pillars: []
+  approved: false
